@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tourism | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: "class" }</script>
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-white dark:bg-gray-800 dark:text-white">
+  <!-- Navbar -->
+  <nav
+    class="flex justify-between items-center p-5 bg-white/70 dark:bg-gray-800/70 backdrop-blur fixed w-full shadow z-50">
+    <h1 class="text-xl font-bold">Angkor Tourism</h1>
+    <div class="hidden md:flex space-x-4 items-center">
+      <a href="index.html" class="font-bold" data-lang="home">Home</a>
+      <a href="destinations.html" data-lang="places">Places</a>
+      <a href="about.html" data-lang="about">About</a>
+      <a href="contact.html" data-lang="contact">Contact</a>
+      <button id="darkToggleBtn" onclick="toggleDark()">🌙</button>
+    </div>
+    <button class="md:hidden" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="menu" class="hidden bg-white dark:bg-gray-800 p-5 space-y-4 md:hidden pt-20">
+    <a href="index.html" class="block font-bold" data-lang="home">Home</a>
+    <a href="destinations.html" class="block" data-lang="places">Places</a>
+    <a href="about.html" class="block" data-lang="about">About</a>
+    <a href="contact.html" class="block" data-lang="contact">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="h-[80vh] bg-cover bg-center flex items-center justify-center"
+    style="background-image:url('https://i.pinimg.com/736x/81/3f/d1/813fd158cca3d458369af3b6337a6ca5.jpg');">
+    <div class="text-center">
+      <h1 id="title" class="text-5xl font-bold bg-black/40 text-white p-4 rounded">
+        Welcome to Angkor
+      </h1>
+      <p id="subtitle" class="text-xl text-white mt-4 bg-black/30 px-4 py-2 rounded">Discover Cambodia</p>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="max-w-7xl mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-4">Popular Places</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="destinations.html" class="bg-white dark:bg-gray-700 p-4 rounded shadow">
+        <img src="https://i.pinimg.com/1200x/79/84/50/798450d4e1598e69184dfd9fc82a2efc.jpg"
+          class="rounded w-full h-48 object-cover">
+        <h3 class="text-xl mt-3">Angkor Wat</h3>
+      </a>
+
+      <a href="destinations.html" class="bg-white dark:bg-gray-700 p-4 rounded shadow">
+        <img src="https://i.pinimg.com/736x/a1/c7/68/a1c76877fe26aaed47bb7eacd10ce0fe.jpg"
+          class="rounded w-full h-48 object-cover">
+        <h3 class="text-xl mt-3">Bayon Temple</h3>
+      </a>
+
+      <a href="destinations.html" class="bg-white dark:bg-gray-700 p-4 rounded shadow">
+        <img src="https://i.pinimg.com/1200x/53/b0/65/53b0656638812f512ed608ee5a71d573.jpg"
+          class="rounded w-full h-48 object-cover">
+        <h3 class="text-xl mt-3">Ta Prohm</h3>
+      </a>
+
+      <a href="destinations.html" class="bg-white dark:bg-gray-700 p-4 rounded shadow">
+        <img src="https://i.pinimg.com/736x/1a/cb/34/1acb345904d0fd73ec09341d2620601c.jpg"
+          class="rounded w-full h-48 object-cover">
+        <h3 class="text-xl mt-3">Banteay Srei</h3>
+      </a>
+
+      <a href="destinations.html" class="bg-white dark:bg-gray-700 p-4 rounded shadow">
+        <img src="https://i.pinimg.com/1200x/c9/b4/bd/c9b4bdf25fbccba720c86d84bc7b495f.jpg"
+          class="rounded w-full h-48 object-cover">
+        <h3 class="text-xl mt-3">Phnom Kulen</h3>
+      </a>
+
+      <a href="destinations.html" class="bg-white dark:bg-gray-700 p-4 rounded shadow">
+        <img
+          src="https://stc-vendors.oss-ap-southeast-1.aliyuncs.com/uploads/20241230/99095b03ebf728d5ddc9d9ddc097bec7.jpg"
+          class="rounded w-full h-48 object-cover">
+        <h3 class="text-xl mt-3">Preah Dak Village</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer mine-->
+  <script>
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('hidden');
+    }
+  </script>
+  <footer class="px-8 py-6 bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="mb-8 md:mb-0">
+        <h3 class="text-lg font-bold mb-4">Everthing about website</h3>
+        <ul>
+          <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+          <li><a href="destinations.html" class="hover:text-blue-400">Places</a></li>
+          <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+          <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+      </div> 
+      <div class="mb-8 md:mb-0">
+        <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+        <div class="space-y-4">
+          <ul>
+          <li><a href="https://www.facebook.com/share/194WRLthZq/?mibextid=wwXIfr" class="hover:text-blue-400">
+             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
+</svg>
+
+            </a></li>
+          <li><a href="https://www.tiktok.com/@assseth0?_r=1&_t=ZS-96VXgQZIRLo" class="hover:text-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48" />
+</svg>
+
+              <path
+         
+            </a></li>
+          <li><a href="#" class="hover:text-blue-400">(+855)61663449</a></li>
+        </ul>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-4">Location</h3>
+        <ul class="mb-4">
+          <li><a href="tel:+1514890000" class="hover:text-blue-400">Seimreab Angkor</a></li>
+          <p class="mb-2"><a href="https://maps.app.goo.gl/r7CbL1aZQ7W8rePk7"
+              class="hover:text-blue-400">https://maps.app.goo.gl/r7CbL1aZQ7W8rePk7</a></p>
+
+        </ul>
+        <div class="mt-4 icons">
+          <a href="#" class="mr-2"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#" class="mr-2"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="mailto:calinscompagnies@calins.com"><i class="far fa-envelope fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-8">&copy; 2026 - Seimrab Angkor.</p>
+  </footer>
+
+
+</body>
+
+</html>

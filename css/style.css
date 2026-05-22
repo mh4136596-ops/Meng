@@ -1,0 +1,11 @@
+/* Custom styles for Angkor Tourism */
+/* Tailwind handles most styling — add overrides here if needed */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
